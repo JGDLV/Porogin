@@ -1,0 +1,39 @@
+-
+  var delivery = {
+    header: 'Доставим пороги в любой город России в течение 7 дней',
+    items: [
+      {
+        header: 'Москва и Московская область ',
+        text: 'При покупке на сумму до 15 000 рублей курьерская доставка за 700 рублей, на большую сумму — бесплатная. Наш сотрудник приедет в удобное для вас время с 08:00 до 21:00.'
+      },
+      {
+        header: 'Остальные регионы',
+        text: 'Стоимость и сроки доставки рассчитываются индивидуально. Поможем выбрать надежную транспортную компанию и отправим заказ сразу после оформления.'
+      }
+    ]
+  }
+
+  var cta = {
+    header: 'Найдете дешевле — <br>предложим еще более выгодную стоимость',
+    buttonHref: '#',
+    buttonText: 'Оставить заявку',
+    text: 'пн-сб с 08:00 до 21:00'
+  }
+
+.delivery
+  .container
+    h2.delivery__header !{delivery.header}
+    .delivery-items
+      each item in delivery.items
+        .delivery__item
+          p.delivery__item-header !{item.header}
+          p.delivery__item-text !{item.text}
+    .cta
+      h2.cta__header !{cta.header}
+      a.cta__button.a-btn-v(href=cta.buttonHref) #[span !{cta.buttonText}]
+      .cta-phones
+        p
+          a.cta__phone(href="tel:" + phoneFix(headerTop.phone1)) !{headerTop.phone1}
+        p
+          a.cta__phone(href="tel:" + phoneFix(headerTop.phone2)) !{headerTop.phone2}
+      p.cta__text !{cta.text}

@@ -1,0 +1,35 @@
+-
+  var guaranteeItemLink = '<a href="#">подробнее</a>'
+
+  var guarantee = {
+    header: 'Пороги точно встанут на ваш Land Rover: даем гарантию',
+    subheader: 'Если заметите заводской дефект — за свой счет обменяем товары',
+    items: [
+      {
+        header: 'Отправка в день заказа',
+        text: 'Получите пороги за 24 часа — есть курьерская доставка по Москве и Московской области. Возможна отправка по РФ, ' + guaranteeItemLink
+      },
+      {
+        header: 'Оплата по факту',
+        text: 'Убедитесь в качестве порогов и рассчитайтесь за них удобным способом — наличными или банковской картой через терминал'
+      },
+      {
+        header: 'Крепеж в комплекте',
+        text: 'Установите пороги самостоятельно, если не хотите обращаться в сервис — никаких сложностей, у вас будет подробная инструкция и крепеж'
+      }
+    ]
+  }
+
+.guarantee
+  .container
+    .guarantee__inner
+      h2.guarantee__header !{guarantee.header}
+      p.guarantee__subheader !{guarantee.subheader}
+      .guarantee-items
+        each item in guarantee.items
+          .guarantee__item
+            .guarantee__item-image-part
+              img.guarantee__item-image(src="", alt="")
+            .guarantee__item-text-part
+              p.guarantee__item-header !{item.header}
+              p.guarantee__item-text !{item.text}

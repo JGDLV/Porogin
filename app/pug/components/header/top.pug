@@ -1,0 +1,26 @@
+-
+  var headerTop = {
+    logoSrc: 'img/logo.png',
+    tagline: 'Продажа и установка оригинальных порогов <br>для автомобилей премиум-класса',
+    phone1: '+7 (499) 391-70-01',
+    phone2: '+7 (926) 048-09-90',
+    whours: 'пн-сб с 08:00 до 21:00',
+    address: 'Москва, 55 км МКАД, Кунцевский <br>Автомобильный рынок «АвтоМолл», <br>Северная сторона, ЦТЗ-26А',
+  }
+
+  var phoneFix = (a) => {
+    return a.split('').map(item => item.replace(/[ ()-]/g, '')).join('')
+  }
+
+.header-top
+  .container
+    .header__inner
+      .logo
+        a.logo__link(href="/")
+          img.logo__image(src=headerTop.logoSrc, alt="")
+      p.tagline !{headerTop.tagline}
+      .header__contacts
+        a.header__phone(href="tel:" + phoneFix(headerTop.phone1)) !{headerTop.phone1}
+        a.header__phone(href="tel:" + phoneFix(headerTop.phone2)) !{headerTop.phone2}
+        p.header__whours !{headerTop.whours}
+      .header__address !{headerTop.address}

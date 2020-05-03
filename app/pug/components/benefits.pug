@@ -1,0 +1,33 @@
+-
+  var benefits = {
+    header: 'Модельные пороги для вашего <br>комфорта и защиты автомобиля',
+    items: [
+      {
+        img: 'img/benefits-01.png',
+        header: 'Выдерживают нагрузку в 140 кг',
+        text: 'Обезопасьте лакокрасочное покрытие и кузов на случай неудачной парковки или ДТП: пороги примут удар на себя '
+      },
+      {
+        img: 'img/benefits-02.png',
+        header: 'Не «бренчат» в движении',
+        text: 'Водите с удовольствием – при правильной установке автомобильные пороги бесшумны даже на гравийке и бездорожье'
+      },
+      {
+        img: 'img/benefits-03.png',
+        header: 'Упрощают посадку и погрузку',
+        text: 'Садитесь в машину и грузите багаж на крышу с легкостью – ваша одежда останется чистой. На непогоду у порогов есть защита от скольжения'
+      }
+    ]
+  }
+
+.benefits
+  .container
+    h2.benefits__header !{benefits.header}
+    .benefits-items
+      each item in benefits.items
+        .benefits__item
+          .benefits__item-image-part
+            img.benefits__item-image(src=item.img, alt="")
+          .benefits__item-text-part
+            p.benefits__item-header !{item.header}
+            p.benefits__item-text !{item.text}

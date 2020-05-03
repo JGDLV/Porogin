@@ -1,0 +1,21 @@
+-
+  var span = '<span>часа</span>'
+
+  var installation = {
+    header: 'Установка порогов с гарантией 1 месяц',
+    subheader: 'после монтажа страховка и гарантия на автомобиль сохраняются',
+    text: 'Закажите замену порогов под ключ в нашем специализированном сервисе: аккуратно снимем старые <br>и установим новые элементы. Выполним работу в течение ' + span + '.'
+  }
+
+.installation
+  .container
+    h2.installation__header !{installation.header}
+    p.installation__subheader !{installation.subheader}
+    p.installation__text !{installation.text}
+    .installation-items
+      .installation__item
+        a.installation__item-link(href="img/installation-01.png")
+          img.installation__item-image(src="img/installation-01.png", alt="")
+      .installation__item
+        a.installation__item-link(href="img/installation-01.png")
+          img.installation__item-image(src="img/installation-01.png", alt="")

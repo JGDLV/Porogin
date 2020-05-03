@@ -1,0 +1,26 @@
+-
+  var intro = {
+    introHeader: 'Оригинальные пороги на <br>Volkswagen по оптовым ценам',
+    introStr1: 'Акция',
+    introStr2: 'При покупке порогов',
+    introStr3: 'установка со скидкой',
+    introStr4: 'за 3 000 руб.',
+    items: [ 'Toyota', 'BMW', 'Mercedes', 'Volkswagen', 'Porsche', 'Land Rover' ]
+  }
+
+.intro
+  .container
+    .intro-dropdown__overlay.dropdown__overlay
+    .intro-dropdown.dropdown
+      input(type='hidden' name='introDropdown' value='')
+      .intro-dropdown__current.dropdown__current Выбрать пороги
+      ul.intro-dropdown-items.dropdown-items(style='display:none;')
+        each item in intro.items
+          li.intro-dropdown__item.dropdown__item
+            a(href="#").intro-dropdown__link !{item}
+    h1.intro__header !{intro.introHeader}
+    .intro__text-all
+      p.intro__text.intro__text_01.intro__text_light !{intro.introStr1}
+      p.intro__text.intro__text_02.intro__text_dark !{intro.introStr2}
+      p.intro__text.intro__text_03.intro__text_dark !{intro.introStr3}
+      p.intro__text.intro__text_04.intro__text_light !{intro.introStr4}

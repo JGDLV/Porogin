@@ -1,0 +1,54 @@
+-
+  var goods = {
+    header: 'Пороги до 48% дешевле, чем у дилера или на разборке',
+    subheader: 'заказываем продукцию крупными партиями напрямую с завода',
+    items: [
+      {
+        image: 'img/goods-01.png',
+        header: 'Кузовные пороги-ступеньки на Land Rover Sport',
+        material: 'алюминий',
+        number: 'HR.42.1236',
+        manufacturer: 'RUS-MAX',
+        complect: '2 порога, крепеж и инструкция по установке',
+        price: '14 957',
+      },
+      {
+        image: 'img/goods-01.png',
+        header: 'Кузовные пороги-ступеньки на UAZ Buhanka',
+        material: 'чугуний',
+        number: 'HR.111.11111',
+        manufacturer: 'RUS-MAX',
+        complect: '2 порога, крепеж и инструкция по установке',
+        price: '41 957',
+      }
+    ]
+  }
+
+.goods
+  .container
+    h2.goods__header !{goods.header}
+    p.goods__subheader !{goods.subheader}
+    .goods-items
+      each item in goods.items
+        .goods__item
+          .goods__item-image-part
+            a.goods__item-link(href=item.image)
+              img.goods__item-image(src=item.image, alt="")
+          .goods__item-text-part
+            p.goods__item-header !{item.header}
+            table.goods__item-table
+              tr
+                td Материал
+                td !{item.material}
+              tr
+                td Оригинальный номер
+                td !{item.number}
+              tr
+                td Производитель
+                td !{item.manufacturer}
+              tr
+                td Комплектация
+                td !{item.complect}
+            .goods__item-footer
+              p.goods__item-price Цена #[span !{item.price} руб.]
+              a.goods__item-button.a-btn-v(href="#" data-order=item.number) #[span Оставить заявку на пороги]

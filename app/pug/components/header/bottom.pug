@@ -1,0 +1,20 @@
+-
+  var menu = [
+    { href: '#', img: 'img/toyota.png', title: 'Toyota' },
+    { href: '#', img: 'img/bmw.png', title: 'BMW' },
+    { href: '#', img: 'img/mercedes.png', title: 'Mercedes' },
+    { href: '#', img: 'img/volkswagen.png', title: 'Volkswagen' },
+    { href: '#', img: 'img/porsche.png', title: 'Porsche' },
+    { href: '#', img: 'img/land-rover.png', title: 'Land Rover' },
+  ]
+
+.header-bottom
+  .menu
+    ul.menu-items
+      each item in menu
+        li.menu__item
+          a.menu__link(href=item.href)
+            span.menu__link-image-part
+              img.menu__link-image(src=item.img, alt=item.title)
+            span.menu__link-text !{item.title}
+  include ../intro.pug
